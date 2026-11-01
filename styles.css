@@ -1,0 +1,178 @@
+:root {
+  /* Handout colours */
+  --sky: #E2E8F0;          /* hero background, card borders */
+  --leaf: #48BB78;         /* headings and buttons */
+  --grass: #48BB78;        /* newsletter background */
+  --wood: #4A5568;         /* covid and footer */
+  --wood-dark: #6b7280;    /* nav links */
+  --brick: #5A67D8;        /* hover, links and subscribe button */
+  --cream: #ffffff;        /* page background */
+
+  /* New Leaf colour way
+     --sky: #cdebfa; --leaf: #4fae5a; --grass: #66bb5a; --wood: #7a5a32;
+     --wood-dark: #5a4326; --brick: #b4503e; --cream: #fff7dc;
+     --sign-yellow: #f3de7a; */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  background: var(--cream);
+}
+
+img { max-width: 100%; display: block; }
+
+/*  Container  */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/*  Headers */
+header {
+  background: white;
+  font-size: 18px;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+header h1 { margin: 0; font-size: 18px; }
+header ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+header a { color: var(--wood-dark); text-decoration: none; font-size: 18px; }
+header a:hover { color: var(--brick); }
+
+/*  Hero  */
+.overview-hero { background: var(--sky); }
+.overview-hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.overview-hero-image { flex: 0 0 220px; }
+.overview-hero-text h2 { margin-top: 0; }
+
+/*  Learn About section  */
+.learn-about { padding: 3rem 0; }
+.learn-about h2 { font-size: 24px; color: var(--leaf); margin-top: 0; }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.card {
+  background: white;
+  border: 1px solid var(--sky);
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+.card img { width: 100%; height: 200px; object-fit: cover; }
+.card-body { padding: 0 1rem 1rem; }
+.card-body h3 { font-size: 21px; color: var(--leaf); margin: 1rem 0 0.5rem; }
+.card-body p { margin: 0; }
+
+/*  COVID-19 section (wooden sign board)  */
+.testing {
+  background: var(--wood);
+  color: white;
+}
+.testing .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.testing h2 { margin-top: 0; }
+.testing p { margin-bottom: 0; }
+.testing .btn {
+  display: inline-block;
+  background: var(--leaf);
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+
+/*  Recent Stories  */
+.stories { padding: 3rem 0; }
+.stories h2 { color: var(--brick); margin-top: 0; }
+.stories article {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.stories article img {
+  flex: 0 0 140px;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.stories article h3 { font-size: 18px; margin: 0 0 0.5rem; }
+.stories article p { margin: 0 0 0.5rem; }
+.stories a { color: var(--brick); }
+
+/*  Newsletter  */
+.newsletter {
+  background: var(--grass);
+  color: white;
+  text-align: center;
+}
+.newsletter .container { padding-top: 3rem; padding-bottom: 3rem; }
+.newsletter h3 { margin-top: 0; }
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.newsletter input {
+  padding: 0.7rem 1rem;
+  font: inherit;
+  border: none;
+  border-radius: 5px;
+  min-width: 280px;
+}
+.newsletter .btn {
+  padding: 0.7rem 1.5rem;
+  font: inherit;
+  color: white;
+  background: var(--brick);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.message { margin-top: 1rem; min-height: 1.5em; }
+
+/*Footer*/
+footer { background: var(--wood); color: white; }
+footer .container { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+footer p { margin: 0; }
+
+/*  Small screens  */
+@media (max-width: 800px) {
+  .cards { grid-template-columns: 1fr; }
+  .overview-hero .container,
+  .testing .container,
+  .stories article { flex-direction: column; text-align: center; }
+}
