@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     message.textContent =
-      "Thanks Your email address " + email + " has been added to our mailing list!";
+      "Thank you, Your email address " + email + " has been added to our mailing list.";
     form.reset();
   });
 });
